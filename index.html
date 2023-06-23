@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Region Picker</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+  // Create the region picker.
+  var regionPicker = $("#regionPicker");
+  regionPicker.empty();
+  var countries = ["United States", "Canada", "Mexico"];
+  for (var i = 0; i < countries.length; i++) {
+    var country = countries[i];
+    var option = $("<option>");
+    option.text(country);
+    option.val(country);
+    regionPicker.append(option);
+  }
+
+  // Handle the change event.
+  regionPicker.change(function() {
+    var selectedCountry = $(this).val();
+    // Do something with the selected country.
+  });
+});
+</script>
+</head>
+<body>
+<select id="regionPicker"></select>
+</body>
+</html>
